@@ -1,0 +1,373 @@
+/* General styles */
+body {
+  font-family: 'Roboto', sans-serif; /* Updated font for modern look */
+  background-color: #e9ecef; /* Softer background color */
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  color: #2c3e50; /* Darker, richer color for contrast */
+  text-align: center;
+  margin-top: 30px; /* Increased margin for better spacing */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 12px; /* More rounded corners */
+  background-color: #ffffff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Slightly larger shadow for depth */
+  max-width: 500px; /* Added width limit for larger screens */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="url"] {
+  width: 100%;
+  max-width: 350px; /* Increased max-width for larger input fields */
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #ced4da;
+  border-radius: 6px; /* More rounded */
+  box-sizing: border-box;
+  transition: border-color 0.3s ease; /* Smooth focus effect */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="url"]:focus {
+  border-color: #3498db; /* Focus effect to highlight input */
+}
+
+button {
+  width: 100%;
+  max-width: 350px;
+  padding: 12px;
+  background-color: #007bff; /* Updated button color for better visibility */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px; /* Slightly increased font size */
+  font-weight: bold;
+  margin-top: 12px;
+  transition: background-color 0.3s ease; /* Smoother hover effect */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker hover state for contrast */
+}
+
+p {
+  text-align: center;
+  margin-top: 12px;
+  color: #6c757d; /* Softer gray for less visual weight */
+}
+
+/* Profile section */
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile h2 {
+  margin-bottom: 12px;
+}
+
+/* Places List */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+li h3 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+li img {
+  width: 120px; /* Slightly larger images */
+  height: auto;
+  border-radius: 6px;
+  margin-right: 25px;
+}
+
+/* Container styling */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.alert {
+  color: #dc3545; /* Bootstrap-like red for errors */
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+/* Center content */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Login and Register page */
+.auth-form {
+  width: 100%;
+  max-width: 450px; /* Increased width for better layout */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  form,
+  .profile,
+  .container {
+      padding: 15px;
+  }
+
+  button,
+  input {
+      width: 100%;
+  }
+
+  li {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+}
+
+/* App structure */
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  background-color: #343a40;
+  padding: 1.5rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Increased shadow for depth */
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  margin: 0 1.5rem;
+}
+
+nav ul li a {
+  color: #171218;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffc107;
+}
+
+.content {
+  flex: 1;
+  padding: 3rem;
+  background-color: #f8f9fa;
+}
+
+h1, h2 {
+  color: #2c3e50;
+  margin-bottom: 2rem;
+}
+
+.place-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Increased shadow */
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smoother hover transition */
+}
+
+.place-card:hover {
+  transform: translateY(-8px); /* Stronger hover effect */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Map styles */
+.simple-map {
+  height: 350px;
+  background-color: #81c784;
+  border: 2px solid #343a40;
+  margin-bottom: 25px;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.place-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.close-btn {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.close-btn:hover {
+  background-color: #c9302c;
+}
+.place-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Distribute space between elements */
+  align-items: center; /* Align vertically */
+}
+
+.button-container {
+  display: flex;
+  gap: 10px; /* Add spacing between the buttons */
+}
+
+.update-btn, .delete-btn {
+  padding: 5px 10px; /* Adjust padding */
+  cursor: pointer;
+}
+.buttons{
+  justify-items: end;
+}
+/* Styles for the user cards container */
+.user-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between cards */
+  justify-content: start; /* Center cards horizontally */
+}
+
+/* Style for individual user card */
+.user-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Style for user profile image */
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Hover effect for user card */
+.user-card:hover {
+  transform: translateY(-5px); /* Slightly lift the card on hover */
+}
+
+/* Style for user profile text */
+.user-profile h3 {
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.user-profile p {
+  color: #555;
+  font-size: 14px;
+}
+/* Add this to your CSS or inline styles */
+.user-cards-container {
+  margin-top: 0;  /* Remove any margin that may be pushing the cards down */
+  padding-top: 0; /* Ensure there’s no padding pushing the cards down */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;  /* Adjust the gap between cards if needed */
+}
+
+.user-card {
+  width: 200px;  /* Set a fixed width for the cards */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.user-card:hover {
+  transform: scale(1.05);  /* Add a hover effect */
+}
+
+.user-profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-profile h3 {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+.user-profile p {
+  font-size: 1em;
+  margin: 5px 0;
+}
+
